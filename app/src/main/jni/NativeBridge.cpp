@@ -338,14 +338,6 @@ Java_com_kashif_folar_utils_NativeBridge_stabilizeVideo(
 }
 
 JNIEXPORT void JNICALL
-Java_com_kashif_folar_utils_NativeBridge_processImage(
-    JNIEnv* env,
-    jobject /* this */,
-    jstring jPath) {
-    LOGW("processImage called but implementation is disabled/removed.");
-}
-
-JNIEXPORT void JNICALL
 Java_com_kashif_folar_utils_NativeBridge_trackObjectVideo(
     JNIEnv* env,
     jobject /* this */,

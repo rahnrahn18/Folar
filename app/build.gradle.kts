@@ -87,4 +87,6 @@ dependencies {
     // Plugins dependencies
     // implementation(libs.core) // Removed QR Zxing
     implementation(libs.text.recognition) // MLKit
+
+    implementation(project(":opencv"))
 }
