@@ -32,3 +32,4 @@ dependencyResolutionManagement {
 
 include(":app")
 include(":opencv")
+project(":opencv").projectDir = file("opencv")
