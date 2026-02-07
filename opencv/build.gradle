@@ -1,6 +1,8 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'maven-publish'
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
+}
 
 def openCVersionName = "4.13.0"
 def openCVersionCode = ((4 * 100 + 13) * 100 + 0) * 10 + 0
@@ -9,11 +11,11 @@ println "OpenCV: " + openCVersionName + " " + project.buildscript.sourceFile
 
 android {
     namespace 'org.opencv'
-    compileSdkVersion 35
+    compileSdk 35
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 35
+        minSdk 21
+        targetSdk 35
 
         versionCode openCVersionCode
         versionName openCVersionName
@@ -45,9 +47,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
-
-    // Removed custom sourceSets to follow standard Android structure:
-    // src/main/java, src/main/jniLibs, src/main/AndroidManifest.xml
 
     externalNativeBuild {
         cmake {
@@ -95,5 +94,5 @@ publishing {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.22"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:2.1.0"
 }
